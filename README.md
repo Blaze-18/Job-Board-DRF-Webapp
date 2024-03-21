@@ -1,5 +1,6 @@
 
-Job Board Website
+///////////////////////////////////////////////////////////////Job Board Website\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
 Welcome to our Job Board website! This platform is built using Django Rest Framework (DRF) for the backend and Vue.js with Nuxt.js for the frontend.
 
 Features
