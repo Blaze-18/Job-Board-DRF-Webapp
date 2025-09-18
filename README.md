@@ -1,25 +1,76 @@
 
-///////////////////////////////////////////////////////////////Job Board Website\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+````markdown
+# Djob
 
-Welcome to our Job Board website! This platform is built using Django Rest Framework (DRF) for the backend and Vue.js with Nuxt.js for the frontend.
+**Djob** is a modern job portal for job seekers and employers. It allows users to browse, post, and apply for jobs. The platform supports job search and filtering, user authentication, and provides a foundation for future enhancements such as a job recommendation engine.
 
-Features
-Job Listings: Easily browse through available job listings.
-Search and Filter: Search for specific jobs and filter them based on various criteria such as job title, location, etc.
-User Authentication: Users can sign up, log in, and manage their profiles.
-Job Posting: Employers can post job listings, edit them, and manage applications.
-Responsive Design: The website is designed to work seamlessly across various devices and screen sizes.
-Technologies Used
-Backend:
-Django: A high-level Python web framework for rapid development.
-Django Rest Framework (DRF): A powerful toolkit for building Web APIs in Django.
-Frontend:
-Vue.js: A progressive JavaScript framework for building user interfaces.
-Nuxt.js: A framework for building server-side rendered Vue.js applications.
-Database:
-SQLite: A lightweight, serverless, SQL database engine.
-Other Tools and Libraries:
-Vuex: State management pattern + library for Vue.js applications.
-Axios: Promise-based HTTP client for the browser and Node.js.
-Vuetify: Material Design component framework for Vue.js.
-Django REST Knox: Token-based authentication system.
+---
+
+## 🚀 Key Features
+
+- **User Authentication:** Secure login and signup for job seekers and employers.
+- **Job Posting & Editing:** Employers can post, edit, and delete jobs.
+- **Search & Filters:** Search jobs by title, location, category, or other criteria.
+- **Job Application Tracking:** Users can track applied jobs and employers can manage applicants.
+- **API Integration:** Backend powered by Django REST Framework exposing RESTful APIs.
+- **State Management:** Frontend state management using Pinia.
+
+---
+
+## 🛠️ Technology Stack
+
+**Backend:** Django REST Framework, Python 3.x, SQLite  
+**Frontend:** Nuxt3, TailwindCSS, TypeScript/JavaScript, Pinia for state management  
+
+---
+
+## 💻 Screenshots
+
+- **Browse jobs**  
+  ![Browse jobs](/Job-Board-DRF-Webapp/screenshots/Browse.png)  
+
+- **Job card / details**  
+  ![Job details](/Job-Board-DRF-Webapp/screenshots/Job.png)  
+
+- **Dashboard**  
+  ![Dashboard](/Job-Board-DRF-Webapp/screenshots/Dashboard.png)  
+
+- **Signup / Login**  
+  ![Signup page](/Job-Board-DRF-Webapp/screenshots/Signup.png)  
+
+
+---
+
+## 📹 Demo Video
+
+<!-- Add demo video here when available -->
+
+---
+
+## ⚡ Installation
+
+### Backend
+```bash
+cd djob_backend
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py createsuperuser  # Create admin user
+python manage.py runserver
+````
+
+### Frontend
+
+```bash
+cd djob_frontend
+npm install
+npm run dev
+```
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License**.
+

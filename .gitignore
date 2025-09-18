@@ -1,0 +1,56 @@
+# ===========================
+# Python / Django
+# ===========================
+*.pyc
+*.pyo
+__pycache__/
+*.sqlite3
+*.log
+.env
+/env/
+venv/
+env/
+*.pot
+*.py[cod]
+*.sqlite3-journal
+
+# Django migrations (optional: keep if you want versioned migrations)
+**/migrations/*.pyc
+**/migrations/__pycache__/
+**/migrations/*.py[cod]
+
+# ===========================
+# Node / Nuxt3 / JavaScript
+# ===========================
+node_modules/
+.nuxt/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.DS_Store
+
+# TypeScript
+*.tsbuildinfo
+
+# ===========================
+# IDE / Editor
+# ===========================
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# ===========================
+# OS
+# ===========================
+*.swp
+*.DS_Store
+Thumbs.db
+
+# ===========================
+# Misc
+# ===========================
+.env.local
+.env.*.local
