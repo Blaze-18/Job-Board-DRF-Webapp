@@ -9,33 +9,55 @@ function logout() {
 </script>
 
 <template>
-    <div  class="flex flex-col min-h-screen">
-        <nav class="p-6 flex items-center justify-between bg-teal-900">
-            <NuxtLink to="/" class="text-xl text-white">Djob</NuxtLink>
+    <div class="flex flex-col min-h-screen">
+        <!-- Navbar -->
+        <nav class="bg-teal-900 text-white">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <NuxtLink to="/" class="text-2xl font-semibold">Djob</NuxtLink>
 
-            <div class="flex items-center space-x-4">
-                <NuxtLink to="/" class="text-white hover:text-teal-300">Home</NuxtLink>
-                <NuxtLink to="/browse" class="text-white hover:text-teal-300">Browse</NuxtLink>
+            <div class="flex items-center space-x-6">
+            <NuxtLink to="/" class="hover:text-teal-300">Home</NuxtLink>
+            <NuxtLink to="/browse" class="hover:text-teal-300">Browse</NuxtLink>
+
+            <template v-if="userStore.user.isAuthenticated">
+                <NuxtLink to="/myjobs" class="hover:text-teal-300">My Jobs</NuxtLink>
+                <NuxtLink to="/createjob" class="hover:text-teal-300">Create Job</NuxtLink>
+                <button
+                @click="logout"
+                class="ml-4 px-4 py-2 bg-rose-600 hover:bg-rose-700 rounded text-white text-sm"
+                >
+                Logout
+                </button>
+            </template>
+            <template v-else>
+                <NuxtLink
+                to="/login"
+                class="px-4 py-2 bg-teal-600 hover:bg-teal-700 rounded text-white text-sm"
+                >
+                Log in
+                </NuxtLink>
+                <NuxtLink
+                to="/signup"
+                class="px-4 py-2 bg-teal-600 hover:bg-teal-700 rounded text-white text-sm"
+                >
+                Sign up
+                </NuxtLink>
+            </template>
             </div>
+        </div>
         </nav>
-        <slot />
 
-        <footer class="p-6 flex flex-wrap items-center justify-between bg-gray-900 mt-auto">
-            <p class="text-gray-300">Copyright (c) 2023 - Djob</p>
-        
-           
-            <div class="flex mt-6 md:mt-0 items-center space-x-4">
-                <template v-if="userStore.user.isAuthenticated">
-                    <NuxtLink to="/myjobs" class="py-4 px-4 bg-teal-600 hover:bg-green-700 text-white rounded-xl">My jobs</NuxtLink>
-                    <NuxtLink to="/createjob" class="py-4 px-4 bg-teal-600 hover:bg-green-700 text-white rounded-xl">Create jobs</NuxtLink>
-                    <a v-on:click="logout" class="py-4 px-6 bg-rose-600 hover:bg-rose-700 text-white rounded-xl">Log out</a>
-                </template>
-                <template v-else>
-                    <NuxtLink to="/login" class="py-4 px-4 bg-teal-600 hover:bg-green-700 text-white rounded-xl">Log in</NuxtLink>
-                    <NuxtLink to="/signup" class="py-4 px-4 bg-teal-600 hover:bg-green-700 text-white rounded-xl">Sign up</NuxtLink>
-                </template>
-            
-            </div>
-        </footer>    
+        <!-- Page Content -->
+        <main class="flex-1">
+        <slot />
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-gray-400">
+        <div class="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between">
+            <p class="text-sm">&copy; 2023 Djob. All rights reserved.</p>
+            <p class="text-sm mt-2 md:mt-0">Built with Nuxt3 + Django REST</p>
+        </div>
+        </footer>
     </div>
 </template>
